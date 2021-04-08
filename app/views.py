@@ -1,8 +1,18 @@
 from django.shortcuts import render
 
+from .models import Squirrel
 
 # Create your views here.
 
-def index(request):
+def mainpage(request):
 
-    return render(request, 'adopt/index.html', {})
+    return render(request, 'app/mainpage.heml', {})
+
+def list(request):
+
+    squirrels = Squirrel.objects.all()
+    context = {
+        'squirrels': squirrels,
+    }
+
+    return render(request, 'app/list.html', context)
