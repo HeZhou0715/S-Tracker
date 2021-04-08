@@ -73,7 +73,7 @@ class Squirrel(models.Model):
         max_length=15,
         help_text=_('Choose the primary fur color for the squirrel'),
         choices=PRIMARY_FUR_COLOR_CHOICES,
-        Blank=True,
+        blank=True,
     )
     
     GROUND_PLANE = 'Ground Plane'
