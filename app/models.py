@@ -18,12 +18,14 @@ class Squirrel(models.Model):
         max_length=100,
         help_text=_('Latitude'),
         default=None,
+        blank=True,
     )
 
     Y = models.FloatField(
         max_length=100,
         help_text=_('Longitude'),
         default=None,
+        blank=True,
     )
     
     PM = 'PM'
