@@ -1,7 +1,12 @@
 <!doctype html>
 
 <html>
-   <body>
-      - {{ squirrel.unique_squirrel_id }}
-   </body>
+    <body>
+        <form method = "POST">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <br>
+            <input type='submit' name="Confirm and Submit">
+        </form>
+    </body>
 </html>
