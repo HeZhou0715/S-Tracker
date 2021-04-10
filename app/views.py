@@ -10,7 +10,7 @@ from .forms import SquirrelForm
 
 def mainpage(request):
 
-    return render(request, 'app/mainpage.heml', {})
+    return render(request, 'app/mainpage.html', {})
 
 def list(request):
 
@@ -21,7 +21,7 @@ def list(request):
 
     return render(request, 'app/list.html', context)
 
-def edit(request, id):
+def edit(request, unique_squirrel_id):
     
     squirrel = get_object_or_404(Squirrel, pk=unique_squirrel_id)
     
@@ -63,8 +63,11 @@ def add(request):
 
 def stats(request):
 
-    am_count, pm_count = 0
-    adult_count, ground_count, running_count = 0
+    am_count = 0
+    pm_count = 0
+    ground_count = 0
+    running_count = 0
+    adult_count = 0
     
     total_number = len(Squirrel.objects.all())
 
@@ -89,4 +92,4 @@ def stats(request):
         'running_count': running_count,
     }
 
-    return render(request, 'app/stat.html', context)
+    return render(request, 'app/stats.html', context)

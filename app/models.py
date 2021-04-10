@@ -12,20 +12,19 @@ class Squirrel(models.Model):
         max_length=100,
         help_text=_('Unique id of squirrel'),
         primary_key=True,
+        default=None,
     )
 
     X = models.FloatField(
         max_length=100,
         help_text=_('Latitude'),
         default=None,
-        blank=True,
     )
 
     Y = models.FloatField(
         max_length=100,
         help_text=_('Longitude'),
         default=None,
-        blank=True,
     )
     
     PM = 'PM'
@@ -40,11 +39,11 @@ class Squirrel(models.Model):
         max_length=2,
         help_text=_('Occur before or after noon'),
         choices=SHIFT_CHOICES,
+        default=AM,
     )
 
     date = models.DateField(
         help_text=_('Occur Date'),
-        blank=True,
         default=None,
     )
     
@@ -59,8 +58,9 @@ class Squirrel(models.Model):
     age = models.CharField(
         max_length=10,
         help_text=_('Age of squirrel_Adult or Juvenile'),
-        blank=True,
         choices=AGE_CHOICES,
+        blank=True,
+        null=True,
     )
     
     GRAY = 'Gray'
@@ -78,6 +78,7 @@ class Squirrel(models.Model):
         help_text=_('Choose the primary fur color for the squirrel'),
         choices=PRIMARY_FUR_COLOR_CHOICES,
         blank=True,
+        null=True,
     )
     
     GROUND_PLANE = 'Ground Plane'
@@ -92,10 +93,13 @@ class Squirrel(models.Model):
         max_length=30,
         help_text=_('Location of squirrel, choose from options'),
         choices=LOCATION_CHOICES,
+        blank=True,
+        null=True,
     )
     
     specific_location = models.TextField(
-        blank=True,
+        default=None,
+        null=True,
         help_text=_('Additional location information'),
     )
     
@@ -126,6 +130,8 @@ class Squirrel(models.Model):
     
     other_activities = models.TextField(
         blank=True,
+        default=None,
+        null=True,
         help_text=_('Additional activities information'),
     )
     
