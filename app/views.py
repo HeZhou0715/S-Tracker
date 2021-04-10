@@ -24,11 +24,22 @@ def list(request):
 def edit(request, id):
     
     squirrel = get_object_or_404(Squirrel, pk=unique_squirrel_id)
-    context = {
-        'squirrel': squirrel,
-    }
-
-    return render(request, 'app/edit.html', context)
+    
+    if request.method == 'POST':
+        form = Squirrel_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            squirrels = Squirrel.objects.all()
+            context = {
+                'squirrels': squirrels,
+            }
+            return render(request, 'app/list.html', context)
+    else:
+        form = Squirrel_Form()
+        context = {
+            'squirrel': squirrel,
+        }
+        return render(request, 'app/edit.html', context)
 
 def add(request):
 
@@ -49,6 +60,3 @@ def add(request):
                 'form': form,
             }
         return render(request, 'app/edit.html', context)
-
-    return JsonResponse({}, status=405)
-
