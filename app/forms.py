@@ -6,5 +6,5 @@ from .models import Squirrel
 
 class SquirrelForm(ModelForm):
     class Meta:
-        model = AdoptRequest
+        model = Squirrel
         fields = '__all__'
