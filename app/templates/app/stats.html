@@ -1,1 +1,22 @@
 <!doctype html>
+
+<html>
+    <head>
+        <title> Stats Page </title>
+        < a href=' '> Back to list of squirrels</ a>
+        <h1 align="center"> General Statistics for Squirrels in Central Park, NYC </h1>
+    </head>
+    <body>
+        <p><ul>
+        <li> Total number of squirrels: {{ total_number }}</li><br>
+        <li> Count of Shift:
+            <ul>
+                <li>AM: {{ am_count }}</li>
+                <li>PM: {{ pm_count }}</li>
+            </ul>
+        <li>Number of adult squirrels: {{ adult_count }}</li><br>
+        <li>Number of squirrels on the ground: {{ ground_count }}</li><br>
+        <li>Number of running squirrels: {{ running_count }}</li><br>
+        </ul></p >
+    </body>
+</html>
