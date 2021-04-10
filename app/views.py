@@ -60,3 +60,33 @@ def add(request):
                 'form': form,
             }
         return render(request, 'app/edit.html', context)
+
+def stats(request):
+
+    am_count, pm_count = 0
+    adult_count, ground_count, running_count = 0
+    
+    total_number = len(Squirrel.objects.all())
+
+    for s in Squirrel.objects.all():
+        if s.shift == 'AM':
+            am_count += 1
+        elif s.shift == 'PM':
+            pm_count += 1
+        elif s.age == 'Adult':
+            adult_count += 1
+        elif s.location == 'Ground Plane':
+            ground_count += 1
+        elif s.running == True:
+            running_count +=1
+    
+    context = {
+        'total_number': total_number,
+        'am_count': am_count,
+        'pm_count': pm_count,
+        'adult_count': adult_count,
+        'ground_count': ground_count,
+        'running_count': running_count,
+    }
+
+    return render(request, 'app/stat.html', context)
