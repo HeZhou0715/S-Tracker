@@ -1,10 +1,26 @@
 <!doctype html>
 <html>
-   <body>
-      <ul>
-      {% for s in squirrels %}
-      <li><a href="{% url 'app:edit' s.unique_squirrel_id %}">{{ s }}</a></li>
-      {% endfor %}
-      </ul>
-   </body>
+    <head>
+            <title>Sighting</title>
+            <p><a href = ' '> Mmain page </ a></p >
+            <h1 align="center"> This is the list for Squirrels in Central park, New York City </h1>
+    </head>
+    <body>
+            <h2> Below is the link to view general statistics:</h2>
+            <ul>
+                    <li><p> <a href = '/sightings/stats'> General Statsistics </ a></p ></li>
+            </ul>
+            <h2> Below is the link to add a new squirrel:</h2>
+            <ul>
+                    <li><p> <a href = '/sightings/add'> Add NEW squirrel </ a> </p ></li>
+            </ul>
+            <h2> Click on the squirrel ID to view and update its relative data:</h2>
+            <p>
+                    <ul>
+                            {% for s in squirrels %}
+                            <li><a href = "{% url 'app:edit' s.unique_squirrel_id %}">{{ s }}</ a></li>
+                            {% endfor %}
+                    </ul>
+            </p >
+    </body>
 </html>
