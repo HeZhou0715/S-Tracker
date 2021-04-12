@@ -35,9 +35,9 @@ def edit(request, unique_squirrel_id):
             }
             return render(request, 'app/list.html', context)
     else:
-        form = SquirrelForm()
+        form = SquirrelForm(instance = squirrel)
         context = {
-            'squirrel': squirrel,
+            'form': form,
         }
         return render(request, 'app/edit.html', context)
 
