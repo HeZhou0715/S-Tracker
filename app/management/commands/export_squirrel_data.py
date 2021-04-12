@@ -14,7 +14,7 @@ class Command(BaseCommand):
         with open(options['csv'], 'w') as fp:
             i = dict()
             s = Squirrel.objects.all()
-            
+            k = 0 
             for j in s:
                 i['Unique Squirrel ID'] = j.unique_squirrel_id
                 i['X'] = j.X
@@ -41,8 +41,10 @@ class Command(BaseCommand):
                 i['Runs from'] = j.runs_from
             
                 row = csv.DictWriter(fp, delimiter = ",", fieldnames = i.keys())
-                row.writeheader()
+                if k == 0:
+                    row.writeheader()
                 row.writerow(i)
+                k += 1
                 #self.stdout.write(self.style.SUCCESS('Added member success!'))
         
         self.stdout.write(self.style.SUCCESS('Successful export all data'))
