@@ -1,8 +1,9 @@
 from django.core.management.base import BaseCommand
-
-from app.models import Squirrel
+from distutils.util import strtobool
 import csv
 import datetime
+
+from app.models import Squirrel
 
 class Command(BaseCommand):
     
@@ -33,20 +34,20 @@ class Command(BaseCommand):
                     primary_fur_color = i['Primary Fur Color'],
                     location = i['Location'],
                     specific_location = i['Specific Location'],
-                    running = (str(i['Running']) == 'TRUE'),
-                    chasing = (str(i['Chasing']) == 'TRUE'),
-                    climbing = (str(i['Climbing']) == 'TRUE'),
-                    eating = (str(i['Eating']) == 'TRUE'),
-                    foraging = (str(i['Foraging']) == 'TRUE'),
+                    running = strtobool(i['Running']),
+                    chasing = strtobool(i['Chasing']),
+                    climbing = strtobool(i['Climbing']),
+                    eating = strtobool(i['Eating']),
+                    foraging = strtobool(i['Foraging']),
                     other_activities = i['Other Activities'],
-                    kuks = (str(i['Kuks']) == 'TRUE'),
-                    quaas = (str(i['Quaas']) == 'TRUE'),
-                    moans = (str(i['Moans']) == 'TRUE'),
-                    tail_flags = (str(i['Tail flags']) == 'TRUE'),
-                    tail_twitches = (str(i['Tail twitches']) == 'TRUE'),
-                    approaches = (str(i['Approaches']) == 'TRUE'),
-                    indifferent = (str(i['Indifferent']) == 'TRUE'),
-                    runs_from = (str(i['Runs from']) == 'TRUE'),
+                    kuks = strtobool(i['Kuks']),
+                    quaas = strtobool(i['Quaas']),
+                    moans = strtobool(i['Moans']),
+                    tail_flags = strtobool(i['Tail flags']),
+                    tail_twitches = strtobool(i['Tail twitches']),
+                    approaches = strtobool(i['Approaches']),
+                    indifferent = strtobool(i['Indifferent']),
+                    runs_from = strtobool(i['Runs from']),
                     )
             
                 s.save()
