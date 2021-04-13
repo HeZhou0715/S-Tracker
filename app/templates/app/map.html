@@ -51,8 +51,8 @@
         <!-- L.Icon.Default.prototype.options.shadowSize = 15; -->
         <!-- L.Icon.Default.prototype.options.shadowAnchor = [0, 0]; -->
 
-        {% for sighting in sightings %}
-          var point_lat_lon = [{{ part_squirrels.X }}, {{ part_squirrels.Y }}];
+        {% for sighting in part_squirrels %}
+          var point_lat_lon = [{{ sighting.Y }}, {{ sighting.X }}];
           var marker = L.marker(point_lat_lon).addTo(map);
         {% endfor %}
     </script>

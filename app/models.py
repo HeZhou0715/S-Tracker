@@ -17,13 +17,13 @@ class Squirrel(models.Model):
 
     X = models.FloatField(
         max_length=100,
-        help_text=_('Latitude'),
+        help_text=_('Longitude'),
         default=None,
     )
 
     Y = models.FloatField(
         max_length=100,
-        help_text=_('Longitude'),
+        help_text=_('Latitude'),
         default=None,
     )
     
