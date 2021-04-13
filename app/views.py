@@ -61,6 +61,14 @@ def add(request):
             }
         return render(request, 'app/edit.html', context)
 
+def map(request):
+    part_squirrels = Squirrel.objects.all()[:100]
+
+    context = {
+        'part_squirrels' = part_squirrels,
+    }
+    return render(request, 'app/map.html', context)
+
 def stats(request):
 
     am_count = Squirrel.objects.filter(shift = 'AM').count()
