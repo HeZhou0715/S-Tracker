@@ -6,12 +6,16 @@ The squirrel data used in this project: https://data.cityofnewyork.us/api/views/
 Install/Running:
 -Click the link below to run the web application:
 https://solid-arcadia-302914.df.r.appspot.com/
+
 OR 
 -use command line by clone 
-Management Commands
+
+Management Commands:
+
 Import: A command that can be used to import the data from the 2018 census file (in CSV format). 
 The file path should be specified at the command line after the name of the management command.
 python manage.py import_squirrel_data /path/to/file.csv
+
 Export: A command that can be used to export the data in CSV format. 
 The file path should be specified at the command line after the name of the management command.
 python manage.py export_squirrel_data /path/to/file.csv
