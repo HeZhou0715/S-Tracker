@@ -21,10 +21,9 @@ The file path should be specified at the command line after the name of the mana
 python manage.py export_squirrel_data /path/to/file.csv
 
 Main Features:
-1.Import and Export data using csv format.
 
-2.View squirrel sites in Central Park.
-
+1. Import and Export data using csv format.
+2. View squirrel sites in Central Park.
 3. Add/Edit squirrel sites.
 
 
