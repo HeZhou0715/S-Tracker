@@ -8,7 +8,7 @@ Install/Running:
 https://solid-arcadia-302914.df.r.appspot.com/
 
 OR 
--use command line by clone 
+-use command line by clone and install our requirements.txt
 
 Management Commands:
 
