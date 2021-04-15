@@ -4,7 +4,7 @@ The squirrel data used in this project: https://data.cityofnewyork.us/api/views/
 
 
 Install/Running:
--Click the link below to run the web application:
+-Click the link (read-only) below to run the web application:  
 https://solid-arcadia-302914.df.r.appspot.com/
 
 OR 
