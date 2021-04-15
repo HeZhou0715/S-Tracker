@@ -45,6 +45,8 @@ class Squirrel(models.Model):
     date = models.DateField(
         help_text=_('Occur Date'),
         default=None,
+        blank=True,
+        null=True,
     )
     
     ADULT = 'Adult'
@@ -100,6 +102,7 @@ class Squirrel(models.Model):
     specific_location = models.TextField(
         default=None,
         null=True,
+        blank=True,
         help_text=_('Additional location information'),
     )
     

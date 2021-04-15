@@ -18,7 +18,10 @@
         <p>
             <ul>
                 {% for s in squirrels %}
-                <li><a href = "{% url 'app:edit' s.unique_squirrel_id %}">{{ s }}</a></li>
+		<li><a href = "{% url 'app:edit' s.unique_squirrel_id %}">{{ s }}</a></li>
+		   <ul>
+		      <li>{{ s.date }}</li>
+		   </ul>
                 {% endfor %}
             </ul>
         </p >
