@@ -28,6 +28,6 @@ Main Features:
 
 
 
-Group Name & Section: Group 17, Section 1
+Group Name & Section: Group 7, Section 1
 
 Group Members: UNIs: [hz2706,zl2979]
