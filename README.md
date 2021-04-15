@@ -14,17 +14,19 @@ Management Commands:
 
 Import: A command that can be used to import the data from the 2018 census file (in CSV format). 
 The file path should be specified at the command line after the name of the management command.
+
 python manage.py import_squirrel_data /path/to/file.csv
 
 Export: A command that can be used to export the data in CSV format. 
 The file path should be specified at the command line after the name of the management command.
+
 python manage.py export_squirrel_data /path/to/file.csv
 
 Main Features:
 
 1. Import and Export data using csv format.
-2. View squirrel sites in Central Park.
-3. Add/Edit squirrel sites.
+2. View squirrel sites in Central Park. (path:/sightings)
+3. Add/Edit squirrel sites. (path:/sightings/add)
 
 
 
